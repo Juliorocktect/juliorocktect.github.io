@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="sandwich-container">
-        <img src="https://clipground.com/images/a-sandwich-clipart-7.png" alt="" id="sandwhich" class="sandwhich">
+        <img src="https://clipground.com/images/a-sandwich-clipart-7.png" alt="" id="sandwhich" class="sandwhich onClick">
     </div>
     <div class="total-sandwiches">
         <h1 id="total"></h1>
@@ -64,8 +64,9 @@
         sandwhich.classList.remove('onClick')
     }
     
-    function addSandwhichPerSecond(number){
-        sandwhichPerSecond++;
+    function addSandwhichPerSecond(number, costs){
+        totalSandwhiches = totalSandwhiches - costs;
+        sandwhichPerSecond = sandwhichPerSecond + number;
         console.log(sandwhichPerSecond);
     }
 
