@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sandwhich-clicker</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="sandwich-container">
+        <img src="https://clipground.com/images/a-sandwich-clipart-7.png" alt="" id="sandwhich" class="sandwhich">
+    </div>
+    <div class="total-sandwiches">
+        <h1 id="total"></h1>
+    </div>
+    <div class="button-container">
+
+        <button id="1stupPower">
+            Sandwhich Click Power + 1
+        </button>
+        
+        <button id="1stfarm" onclick="addSandwhichPerSecond(1)">
+            Sandwchich-farm 1 Sandwhich per second
+        </button>
+        <button id="upgrade-button">
+
+        </button>
+        <button id="upgrade-button">
+
+        </button>
+        <button id="upgrade-button">
+
+        </button>
+        <button id="upgrade-button">
+
+        </button>
+        <button id="upgrade-button">
+
+        </button>
+        <button id="upgrade-button">
+            
+        </button>
+        <button id="upgrade-button">
+
+        </button>
+        <button id="upgrade-button">
+
+        </button>
+    </div>
+</body>
+<script>
+    var totalSandwhiches = 0;
+    var sandwhichPerClick = 10;
+    var sandwhichPerSecond = 8;
+
+    const sandwhich = document.getElementById('sandwhich');
+    var total = document.getElementById('total');
+    sandwhich.addEventListener('click',addSandwhich);
+    
+    function sandwhichAnimation(){
+        sandwhich.classList.add('onClick');
+        setTimeout(1000);
+        sandwhich.classList.remove('onClick')
+    }
+    
+    function addSandwhichPerSecond(number){
+        sandwhichPerSecond++;
+        console.log(sandwhichPerSecond);
+    }
+
+    //per second
+    setInterval(() => {
+    sandwhichPerSecondF();
+    }, 1000);
+
+
+    function sandwhichPerSecondF(){
+        totalSandwhiches = totalSandwhiches + sandwhichPerSecond;
+        total.innerHTML = totalSandwhiches;
+        //console.log(totalSandwhiches);
+    }
+    //for clicking
+    function addSandwhich(){
+        totalSandwhiches = totalSandwhiches + sandwhichPerClick;
+        total.innerHTML = totalSandwhiches;
+        sandwhich.classList.remove("onClick")
+    }
+    function setMultiplyer(number){
+        sandwhichPerClick = sandwhichPerClick + number;
+    }
+    
+    //Button logic
+
+    //btn +1 per click
+    const btn_power_1 = document.getElementById('1stupPower');
+    btn_power_1.addEventListener('click',setMultiplyer(1));
+    //btn +1 per seconde
+    const btn_second_1 = document.getElementById('1stfarm');
+    //btn_second_1.addEventListener('click',addSandwhichPerSecond(1));
+
+
+    
+    
+</script>
+</html>
