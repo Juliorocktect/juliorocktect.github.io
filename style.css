@@ -1,8 +1,0 @@
-.sandwhich {
-  height: 30vh;
-  cursor: pointer;
-  transition: width 0.3s ease-in;
-}
-.onClick {
-  height: 25vh;
-}
